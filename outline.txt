@@ -1,0 +1,14 @@
+finalApp00
+
+1. tamplate: sidemenu
+    ionic start finalApp00 sidemenu
+
+2. Page:
+    login
+    register
+    news
+    grade
+    youtube
+    about
+    home
+

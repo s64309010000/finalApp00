@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ข่าวสาร จำนวน {{ total }} เรื่อง</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let ar of articles">
+    <img *ngIf="ar.urlToImage" [src]="ar.urlToImage"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ ar.title }}
+      </ion-card-title>
+      <p>
+        {{ ar.description }}        
+      </p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear color="danger" icon-left>
+          <ion-icon name="person"></ion-icon>
+          {{ ar.source.name }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear color="primary" icon-left>
+          <ion-icon name="contact"></ion-icon>
+          {{ ar.author }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear color="danger" icon-left>
+          <ion-icon name="calendar"></ion-icon>
+          {{ ar.publishedAt | date:'dd/MM/yyyy' }}
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button clear color="dark" icon-left>
+          <ion-icon name="more"></ion-icon>
+          <a href="{{ ar.url }}">อ่านเพิ่มเติม</a>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+
+</ion-content>
